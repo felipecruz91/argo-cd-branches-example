@@ -29,10 +29,11 @@ register-kind-cluster-2-on-argo-cd:
 	argocd cluster add kind-cluster-2
 .PHONY: register-kind-cluster-2-on-argo-cd
 
-## Create ArgoCD application
-create-argo-cd-app:
-	kubectl apply -f application.yaml -n argocd
-.PHONY: create-argo-cd-app
+## Create ArgoCD applications
+create-argo-cd-apps:
+	kubectl apply -f application-dev.yaml -n argocd
+	kubectl apply -f application-master.yaml -n argocd
+.PHONY: create-argo-cd-apps
 
 ### HELP
 ### Based on https://gist.github.com/prwhite/8168133#gistcomment-2278355.
