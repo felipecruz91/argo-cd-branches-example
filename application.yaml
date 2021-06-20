@@ -14,12 +14,12 @@ spec:
   # Source of the application manifests
   source:
     repoURL: https://github.com/felipecruz91/argo-cd-branches-example.git
-    targetRevision: HEAD
+    targetRevision: dev
     path: guestbook
 
   # Destination cluster and namespace to deploy the application
   destination:
-    server: https://kubernetes.default.svc
+    server: https://192.168.1.39:9443
     namespace: guestbook
 
   # Sync policy
