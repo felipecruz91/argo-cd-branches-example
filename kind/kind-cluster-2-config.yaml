@@ -3,3 +3,11 @@ apiVersion: kind.x-k8s.io/v1alpha4
 networking:
   apiServerAddress: "192.168.1.39"
   apiServerPort: 9443
+nodes:
+  - role: control-plane
+    kubeadmConfigPatches:
+      - |
+        kind: InitConfiguration
+        nodeRegistration:
+          kubeletExtraArgs:
+            system-reserved: memory=1Gi
